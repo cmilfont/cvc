@@ -1,0 +1,34 @@
+{
+  "name": "cvc",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "firebase": "^4.8.1",
+    "history": "^4.7.2",
+    "immutable": "^3.8.2",
+    "ismobilejs": "^0.4.1",
+    "material-ui": "^1.0.0-beta.27",
+    "material-ui-icons": "^1.0.0-beta.17",
+    "material-ui-pickers": "^1.0.0-beta.12",
+    "moment": "^2.20.1",
+    "react": "^16.2.0",
+    "react-dashboard-mui": "git+https://bitbucket.org/rivendel-tecnologia/react-dashboard-mui.git",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-scripts": "1.0.17",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-immutable": "^4.0.0",
+    "redux-saga": "^0.16.0",
+    "typeface-roboto": "^0.0.45",
+    "uuid": "^3.1.0"
+  },
+  "scripts": {
+    "start": "NODE_PATH=src react-scripts start",
+    "build": "NODE_PATH=src react-scripts build"
+  }
+}
