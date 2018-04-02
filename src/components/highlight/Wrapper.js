@@ -8,8 +8,8 @@ export default class Wrapper extends React.Component {
     }
 
     componentDidMount() {
-        this.el.onmouseup = this.onSelect;
-    }onSelectedText
+       // this.el.onmouseup = this.onSelect;
+    }
 
     onSelect = () => {
         const userSelection = window.getSelection()

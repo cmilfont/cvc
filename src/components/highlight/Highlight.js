@@ -18,8 +18,8 @@ class Highlight extends React.Component {
     }
 
     componentDidMount() {
-        document.onmouseup = this.onSelectedText;
-        document.onkeyup = this.onSelectedText;
+        //document.onmouseup = this.onSelectedText;
+        //document.onkeyup = this.onSelectedText;
     }
 
     render() {
