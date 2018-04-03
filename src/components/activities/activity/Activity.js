@@ -1,24 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-class Activity extends React.Component {
+const Activity = (props) => {
 
-    static contextTypes = {
-        onClick: PropTypes.func,
-    }
+    const onClick = () => {
+        props.onClick(props);
+    };
 
-    onClick = () => {
-        this.context.onClick(this.props);
-    }
+    return (
+        <div>
+            {props.description}
+            <button onClick={onClick}>Editar</button>
+        </div>
+    );
 
-    render() {
-        return (
-            <div>
-                {this.props.description}
-                <button onClick={this.onClick}>Editar</button>
-            </div>
-        )
-    }
-}
+};
 
 export default Activity;
