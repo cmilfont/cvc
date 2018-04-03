@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Activity from './Activity';
 
 class Container extends React.Component {
-
     render() {
         return (
             <Activity {...this.props} />
@@ -11,17 +10,13 @@ class Container extends React.Component {
     }
 }
 
-const mapDispatch = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
     return {
         onClick: (payload) => dispatch({
             type: 'EDIT_ACTIVITY',
             payload,
         }),
-        onSave: (payload) => dispatch({
-            type: 'SAVE_ACTIVITY',
-            payload,
-        }),
     }
 }
 
-export default connect(null, mapDispatch)(Container);
+export default connect(null, mapDispatchToProps)(Container);

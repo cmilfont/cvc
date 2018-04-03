@@ -1,5 +1,5 @@
 import React from 'react';
-import Activity from './activity/Activity';
+import Activity from './activity';
 import EditActivity from './activity/edit';
 
 class Activities extends React.Component {

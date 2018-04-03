@@ -30,7 +30,7 @@
     "uuid": "^3.1.0"
   },
   "scripts": {
-    "start": "NODE_PATH=src react-scripts start",
-    "build": "NODE_PATH=src react-scripts build"
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   }
 }

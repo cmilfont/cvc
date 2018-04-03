@@ -29,6 +29,21 @@ class App extends React.Component {
           if (action.type === 'FETCH_ACTIVITIES_SUCCESSFUL') {
             return action.payload;
           }
+          if (action.type === 'SAVE_ACTIVITY_SUCCESSFUL') {
+            return state.map(item => {
+              return (item.id === action.payload.id) ?
+                action.payload: item;
+            })
+          }
+          return state;
+        },
+        edit: (state = {}, action) => {
+          if( action.type === 'EDIT_ACTIVITY') {
+            return action.payload;
+          }
+          if (action.type === 'SAVE_ACTIVITY_SUCCESSFUL') {
+            return {};
+          }
           return state;
         }
       }),

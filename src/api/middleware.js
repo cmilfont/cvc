@@ -21,6 +21,14 @@ function middleware(store) {
                     payload: result,
                 })
             }
+
+            if (action.type === 'SAVE_ACTIVITY') {
+                // fiz o ajax
+                store.dispatch({
+                    type: 'SAVE_ACTIVITY_SUCCESSFUL',
+                    payload: action.payload,
+                })
+            }
             
             return next(action);
         }

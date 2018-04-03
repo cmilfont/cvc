@@ -5,9 +5,7 @@ import Activities from './Activities';
 class Container extends React.Component {
 
     componentDidMount() {
-        this.props.dispatch({
-            type: 'FETCH_ACTIVITIES',
-        })
+        this.props.fetch();
     }
 
     render() {
@@ -24,4 +22,15 @@ const mapStateToProps = (state) => {
     };
 }
 
-export default connect(mapStateToProps)(Container);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetch: () => dispatch({
+            type: 'FETCH_ACTIVITIES',
+        }),
+    }
+}
+
+export default connect(
+    mapStateToProps, 
+    mapDispatchToProps
+)(Container);
