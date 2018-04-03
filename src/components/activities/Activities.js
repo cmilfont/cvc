@@ -1,33 +1,24 @@
 import React from 'react';
 import Activity from './activity/Activity';
-import EditActivity from './activity/edit/Activity';
+import EditActivity from './activity/edit';
 
 class Activities extends React.Component {
 
-    state = { edit: {} }
-
-    onClick = (edit) => {
-        this.setState({
-            edit,
-        })
-    }
-
     render() {
-        return this.props.list.map(item => {
-            return (
-                (this.state.edit.id === item.id) ?
+
+        const list = this.props.list.map(item => (
+            (this.props.edit.id === item.id) ? 
                 <EditActivity
-                    onClick={this.onClick}
                     key={`act-${item.id}`}
                     {...item}
                 /> :
                 <Activity
-                    onClick={this.onClick}
                     key={`act-${item.id}`}
                     {...item}
                 />
-            )
-          })
+        ));
+
+        return list;
     }
 }
 

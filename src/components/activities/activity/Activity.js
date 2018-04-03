@@ -1,9 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Activity extends React.Component {
 
+    static contextTypes = {
+        onClick: PropTypes.func,
+    }
+
     onClick = () => {
-        this.props.onClick(this.props);
+        this.context.onClick(this.props);
     }
 
     render() {

@@ -15,21 +15,54 @@ const result = [
 
 class App extends React.Component {
 
+  static childContextTypes = {
+    onSave: PropTypes.func,
+    onClick: PropTypes.func,
+  }
+
   state = {
-    list: []
+    list: [],
+    edit: {},
+  }
+
+  getChildContext() {
+    return {
+      onSave:this.onSave,
+      onClick: this.onClick,
+    }
   }
 
   componentDidMount() {
     //fiz o ajax
     this.setState({
+      ...this.state,
       list: result,
     })
+  }
+
+  onClick = (edit) => {
+    this.setState({
+        ...this.state,
+        edit,
+    })
+  }
+
+  onSave = (activity) => {
+    this.setState({
+      list: this.state.list.map(item => {
+        return (item.id === activity.id) ? activity : item;
+      }),
+      edit: {},
+    });
   }
 
   render() {
     return (
       <div>
-        <Activities list={this.state.list} />
+        <Activities
+          edit={this.state.edit}
+          list={this.state.list}
+        />
       </div>
     );
 
